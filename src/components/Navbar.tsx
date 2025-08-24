@@ -32,48 +32,48 @@ export default function Navbar() {
 
   return (
     <div className="fixed top-0 left-0 right-0 z-50 flex justify-center pt-5 px-4">
-      <div className={`${scrolled ? 'bg-[#0a0a18]/90' : 'bg-[#0a0a18]/70'} backdrop-blur-lg py-3 px-3 sm:px-6 transition-all duration-300 
-        border-2 border-cyan-600/30 w-full max-w-6xl
-        shadow-[6px_6px_0px_0px_rgba(6,182,212,0.2)]
+      <div className={`${scrolled ? 'bg-white/90' : 'bg-white/70'} backdrop-blur-lg py-3 px-3 sm:px-6 transition-all duration-300 
+        border-2 border-black w-full max-w-6xl
+        shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]
         ${scrolled ? 'rounded-lg' : 'rounded-xl'}`}>
         <div className="flex items-center justify-between">
           <div className="flex-shrink-0 mx-1">
-            <span className="text-xl font-mono font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">PKP</span>
+            <span className="text-xl font-mono font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-cyan-600">PKP</span>
           </div>
           
           {/* Desktop Navigation */}
           <div className="hidden md:block">
-            <div className="relative flex items-center space-x-1 bg-[#12121e] p-1 rounded-md border border-gray-800">
+            <div className="relative flex items-center space-x-1 bg-gray-50 p-1 rounded-md border-2 border-black">
               {/* Island-style navigation with indicator */}
               <div className={`absolute h-8 transition-all duration-300 -z-10
-                ${activeSection === 'home' ? 'left-[5px] w-[60px] bg-gradient-to-r from-cyan-600/20 to-cyan-600/10' : ''}
-                ${activeSection === 'about' ? 'left-[73px] w-[70px] bg-gradient-to-r from-purple-600/20 to-purple-600/10' : ''}
-                ${activeSection === 'events' ? 'left-[151px] w-[75px] bg-gradient-to-r from-cyan-600/20 to-purple-600/10' : ''}
-                ${activeSection === 'faq' ? 'left-[234px] w-[60px] bg-gradient-to-r from-purple-600/20 to-cyan-600/10' : ''}
-                rounded-md border border-gray-700/50 shadow-[3px_3px_0px_0px_rgba(6,182,212,0.2)]
+                ${activeSection === 'home' ? 'left-[5px] w-[60px] bg-purple-100' : ''}
+                ${activeSection === 'about' ? 'left-[73px] w-[70px] bg-purple-100' : ''}
+                ${activeSection === 'events' ? 'left-[151px] w-[75px] bg-purple-100' : ''}
+                ${activeSection === 'faq' ? 'left-[234px] w-[60px] bg-purple-100' : ''}
+                rounded-md border border-purple-300 shadow-[3px_3px_0px_0px_rgba(139,92,246,0.3)]
               `}></div>
               
               <a href="#" 
                 className={`px-4 py-1.5 rounded-md text-sm font-mono font-medium transition-all duration-300 
-                ${activeSection === 'home' ? 'text-cyan-400' : 'text-gray-300 hover:text-white'}`}
+                ${activeSection === 'home' ? 'text-purple-600 font-bold' : 'text-gray-600 hover:text-black'}`}
                 onClick={() => setActiveSection('home')}>
                 HOME
               </a>
               <a href="#about" 
                 className={`px-4 py-1.5 rounded-md text-sm font-mono font-medium transition-all duration-300 
-                ${activeSection === 'about' ? 'text-purple-400' : 'text-gray-300 hover:text-white'}`}
+                ${activeSection === 'about' ? 'text-purple-600 font-bold' : 'text-gray-600 hover:text-black'}`}
                 onClick={() => setActiveSection('about')}>
                 ABOUT
               </a>
               <a href="#events" 
                 className={`px-4 py-1.5 rounded-md text-sm font-mono font-medium transition-all duration-300 
-                ${activeSection === 'events' ? 'text-cyan-400' : 'text-gray-300 hover:text-white'}`}
+                ${activeSection === 'events' ? 'text-purple-600 font-bold' : 'text-gray-600 hover:text-black'}`}
                 onClick={() => setActiveSection('events')}>
                 EVENTS
               </a>
               <a href="#faq" 
                 className={`px-4 py-1.5 rounded-md text-sm font-mono font-medium transition-all duration-300 
-                ${activeSection === 'faq' ? 'text-purple-400' : 'text-gray-300 hover:text-white'}`}
+                ${activeSection === 'faq' ? 'text-purple-600 font-bold' : 'text-gray-600 hover:text-black'}`}
                 onClick={() => setActiveSection('faq')}>
                 FAQ
               </a>
@@ -83,13 +83,13 @@ export default function Navbar() {
           {/* Join Community Button */}
           <div className="hidden md:block ml-6">
             <a href="https://discord.gg/UwmUS9xKsF" target="_blank" rel="noopener noreferrer" 
-              className="bg-[#12121e] text-white font-mono font-medium px-5 py-1.5 rounded-md 
-              border-2 border-cyan-500/30
-              shadow-[4px_4px_0px_0px_rgba(6,182,212,0.3)]
-              transition-all duration-300 hover:shadow-[6px_6px_0px_0px_rgba(6,182,212,0.4)] 
+              className="bg-purple-600 text-white font-mono font-medium px-5 py-1.5 rounded-md 
+              border-2 border-black
+              shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]
+              transition-all duration-300 hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,0.8)] 
               hover:translate-x-[-2px] hover:translate-y-[-2px]
               relative overflow-hidden group">
-              <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-cyan-600/10 to-purple-600/10"></span>
+              <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-purple-500/10 to-purple-700/10"></span>
               <span className="relative z-10">JOIN COMMUNITY</span>
             </a>
           </div>
@@ -98,10 +98,10 @@ export default function Navbar() {
             <button 
               type="button" 
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-cyan-400 
-              border border-cyan-500/30 bg-[#12121e] 
-              shadow-[3px_3px_0px_0px_rgba(6,182,212,0.2)]
-              hover:shadow-[4px_4px_0px_0px_rgba(6,182,212,0.3)]
+              className="inline-flex items-center justify-center p-2 rounded-md text-purple-600 
+              border-2 border-black bg-white 
+              shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]
+              hover:shadow-[4px_4px_0px_0px_rgba(139,92,246,0.5)]
               hover:translate-x-[-1px] hover:translate-y-[-1px]
               transition-all duration-300 focus:outline-none"
             >
@@ -116,53 +116,53 @@ export default function Navbar() {
 
       {/* Mobile menu, show/hide based on menu state */}
       {mobileMenuOpen && (
-        <div className="md:hidden absolute top-20 left-4 right-4 bg-[#0a0a18] rounded-md 
-          border-2 border-cyan-600/30
-          shadow-[6px_6px_0px_0px_rgba(6,182,212,0.2)]
+        <div className="md:hidden absolute top-20 left-4 right-4 bg-white rounded-md 
+          border-2 border-black
+          shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]
           backdrop-blur-lg z-50 transition-all duration-300 transform origin-top">
           <div className="p-4 space-y-3">
             <a href="#" 
-              className={`block px-4 py-3 text-center font-mono font-medium tracking-wider transition-all duration-300 border 
+              className={`block px-4 py-3 text-center font-mono font-medium tracking-wider transition-all duration-300 border-2 
               ${activeSection === 'home' 
-                ? 'bg-[#12121e] text-cyan-400 border-cyan-500/30 shadow-[3px_3px_0px_0px_rgba(6,182,212,0.2)]' 
-                : 'text-gray-300 border-gray-800/50 hover:border-cyan-500/20 hover:shadow-[2px_2px_0px_0px_rgba(6,182,212,0.1)]'}`}
+                ? 'bg-purple-100 text-purple-600 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]' 
+                : 'text-gray-600 border-gray-300 hover:border-black hover:shadow-[2px_2px_0px_0px_rgba(139,92,246,0.5)]'}`}
               onClick={() => {setActiveSection('home'); setMobileMenuOpen(false);}}>
               HOME
             </a>
             <a href="#about" 
-              className={`block px-4 py-3 text-center font-mono font-medium tracking-wider transition-all duration-300 border
+              className={`block px-4 py-3 text-center font-mono font-medium tracking-wider transition-all duration-300 border-2
               ${activeSection === 'about' 
-                ? 'bg-[#12121e] text-purple-400 border-purple-500/30 shadow-[3px_3px_0px_0px_rgba(147,51,234,0.2)]' 
-                : 'text-gray-300 border-gray-800/50 hover:border-purple-500/20 hover:shadow-[2px_2px_0px_0px_rgba(147,51,234,0.1)]'}`}
+                ? 'bg-purple-100 text-purple-600 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]' 
+                : 'text-gray-600 border-gray-300 hover:border-black hover:shadow-[2px_2px_0px_0px_rgba(139,92,246,0.5)]'}`}
               onClick={() => {setActiveSection('about'); setMobileMenuOpen(false);}}>
               ABOUT
             </a>
             <a href="#events" 
-              className={`block px-4 py-3 text-center font-mono font-medium tracking-wider transition-all duration-300 border
+              className={`block px-4 py-3 text-center font-mono font-medium tracking-wider transition-all duration-300 border-2
               ${activeSection === 'events' 
-                ? 'bg-[#12121e] text-cyan-400 border-cyan-500/30 shadow-[3px_3px_0px_0px_rgba(6,182,212,0.2)]' 
-                : 'text-gray-300 border-gray-800/50 hover:border-cyan-500/20 hover:shadow-[2px_2px_0px_0px_rgba(6,182,212,0.1)]'}`}
+                ? 'bg-purple-100 text-purple-600 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]' 
+                : 'text-gray-600 border-gray-300 hover:border-black hover:shadow-[2px_2px_0px_0px_rgba(139,92,246,0.5)]'}`}
               onClick={() => {setActiveSection('events'); setMobileMenuOpen(false);}}>
               EVENTS
             </a>
             <a href="#faq" 
-              className={`block px-4 py-3 text-center font-mono font-medium tracking-wider transition-all duration-300 border
+              className={`block px-4 py-3 text-center font-mono font-medium tracking-wider transition-all duration-300 border-2
               ${activeSection === 'faq' 
-                ? 'bg-[#12121e] text-purple-400 border-purple-500/30 shadow-[3px_3px_0px_0px_rgba(147,51,234,0.2)]' 
-                : 'text-gray-300 border-gray-800/50 hover:border-purple-500/20 hover:shadow-[2px_2px_0px_0px_rgba(147,51,234,0.1)]'}`}
+                ? 'bg-purple-100 text-purple-600 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]' 
+                : 'text-gray-600 border-gray-300 hover:border-black hover:shadow-[2px_2px_0px_0px_rgba(139,92,246,0.5)]'}`}
               onClick={() => {setActiveSection('faq'); setMobileMenuOpen(false);}}>
               FAQ
             </a>
           </div>
-          <div className="p-4 border-t border-gray-800">
+          <div className="p-4 border-t border-gray-300">
             <a href="https://discord.gg/UwmUS9xKsF" target="_blank" rel="noopener noreferrer" 
-              className="block w-full text-center bg-[#12121e] text-white font-mono font-medium py-3 px-4
-              border-2 border-cyan-500/30
-              shadow-[4px_4px_0px_0px_rgba(6,182,212,0.3)]
-              transition-all duration-300 hover:shadow-[5px_5px_0px_0px_rgba(6,182,212,0.4)]
+              className="block w-full text-center bg-purple-600 text-white font-mono font-medium py-3 px-4
+              border-2 border-black
+              shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]
+              transition-all duration-300 hover:shadow-[5px_5px_0px_0px_rgba(0,0,0,0.8)]
               hover:translate-x-[-1px] hover:translate-y-[-1px]
               relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-600/10 to-purple-600/10"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-purple-700/10"></div>
               <span className="relative z-10">JOIN COMMUNITY</span>
             </a>
           </div>

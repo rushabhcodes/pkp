@@ -1,13 +1,13 @@
-import Navbar from './components/Navbar'
-import HeroSection from './components/HeroSection'
-import AboutSection from './components/AboutSection'
-import EventsSection from './components/EventsSection'
-import FAQSection from './components/FAQSection'
-import Footer from './components/Footer'
+import AboutSection from "./components/AboutSection";
+import EventsSection from "./components/EventsSection";
+import FAQSection from "./components/FAQSection";
+import Footer from "./components/Footer";
+import HeroSection from "./components/HeroSection";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
-    <div className="min-h-screen bg-gray-900 text-white">
+    <div className="min-h-screen">
       <Navbar />
       <HeroSection />
       <AboutSection />
@@ -15,7 +15,7 @@ function App() {
       <FAQSection />
       <Footer />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -1,8 +1,21 @@
-import { useState } from 'react';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger
+} from './ui/accordion';
+import { Button } from './ui/button';
+import { Input } from './ui/input';
+import { 
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle
+} from './ui/card';
 
 export default function FAQSection() {
-  const [openIndex, setOpenIndex] = useState(-1);
-  
   const faqs = [
     {
       question: "How do I join Programmers ka Parivar?",
@@ -26,66 +39,79 @@ export default function FAQSection() {
     }
   ];
   
-  const toggleFAQ = (index: number) => {
-    setOpenIndex(openIndex === index ? -1 : index);
-  };
-  
   return (
-    <section id="faq" className="py-24 bg-[#1a1a2e] text-white relative overflow-hidden">
-      {/* Abstract geometric shapes for background */}
-      <div className="absolute -top-20 -right-20 w-80 h-80 bg-purple-900/20 rounded-full blur-3xl z-0"></div>
-      <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-cyan-900/20 rounded-full blur-3xl z-0"></div>
+    <section id="faq" className="py-24 bg-white text-gray-800 relative overflow-hidden">
+      {/* White Sphere Grid Background */}
+      <div
+        className="absolute inset-0 z-0"
+        style={{
+          background: "white",
+          backgroundImage: `
+            linear-gradient(to right, rgba(71,85,105,0.3) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(71,85,105,0.3) 1px, transparent 1px),
+            radial-gradient(circle at 50% 50%, rgba(139,92,246,0.25) 0%, rgba(139,92,246,0.1) 40%, transparent 80%)
+          `,
+          backgroundSize: "32px 32px, 32px 32px, 100% 100%",
+        }}
+      />
       
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16 relative">
           <div className="inline-block">
-            <h2 className="text-4xl font-black font-mono bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-500 mb-4 uppercase tracking-wider">Frequently Asked Questions</h2>
-            <div className="h-1 w-24 bg-cyan-500 mx-auto"></div>
+            <h2 className="text-4xl font-black font-mono bg-clip-text text-transparent bg-gradient-to-r from-cyan-600 to-purple-600 mb-4 uppercase tracking-wider">Frequently Asked Questions</h2>
+            <div className="h-1 w-24 bg-gradient-to-r from-cyan-500 to-purple-500 mx-auto"></div>
           </div>
-          <div className="max-w-2xl mx-auto mt-6 bg-[#131325] p-4 border-r-4 border-purple-500 shadow-[4px_4px_0px_0px_rgba(139,92,246,0.3)]">
-            <p className="text-gray-300 text-lg font-medium">
+          <div className="max-w-2xl mx-auto mt-6 bg-purple-50 p-4 border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[6px_6px_0px_0px_rgba(139,92,246,1)] hover:border-purple-500 transition-all duration-300">
+            <p className="text-gray-800 text-lg font-medium">
               Got questions? We've got answers.
             </p>
+            
+            <div className="mt-4 flex gap-2">
+              <Input 
+                placeholder="Search FAQs..." 
+                className="border-2 border-black focus-visible:ring-purple-500"
+              />
+              <Button className="border-2 border-black bg-purple-500 text-white hover:bg-purple-600">
+                Search
+              </Button>
+            </div>
           </div>
         </div>
         
-        <div className="space-y-6">
+        <Accordion type="single" collapsible className="space-y-6">
           {faqs.map((faq, index) => (
-            <div 
+            <AccordionItem 
               key={index}
-              className={`group relative ${openIndex === index ? 'mb-10' : ''}`}
+              value={`item-${index}`}
+              className="border-2 border-black bg-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] group hover:shadow-[6px_6px_0px_0px_rgba(139,92,246,1)] hover:border-purple-500 hover:-translate-y-1 hover:translate-x-1 transition-all duration-300"
             >
-              <div className={`absolute inset-0 bg-gradient-to-r ${index % 2 === 0 ? 'from-cyan-500/20 to-cyan-700/20' : 'from-purple-500/20 to-purple-700/20'} rounded-xl blur opacity-30 ${openIndex === index ? 'opacity-70' : ''} transition duration-500`}></div>
-              <div className={`relative bg-[#131325] border-2 ${index % 2 === 0 ? 'border-cyan-500/30' : 'border-purple-500/30'} rounded-xl overflow-hidden transition-all duration-300 ${openIndex === index ? 'shadow-[6px_6px_0px_0px_rgba(6,182,212,0.4)]' : 'shadow-[4px_4px_0px_0px_rgba(6,182,212,0.2)]'}`}>
-                <button
-                  className="w-full px-6 py-5 text-left flex justify-between items-center"
-                  onClick={() => toggleFAQ(index)}
-                >
-                  <span className="text-lg font-bold font-mono text-white">{faq.question}</span>
-                  <div className={`w-8 h-8 flex items-center justify-center rounded-md transition-colors duration-300 ${openIndex === index ? 'bg-cyan-900/50' : 'bg-transparent'}`}>
-                    <svg 
-                      className={`w-5 h-5 transform transition-transform duration-300 ${openIndex === index ? 'rotate-180 text-cyan-400' : 'text-gray-400'}`}
-                      fill="none" 
-                      viewBox="0 0 24 24" 
-                      stroke="currentColor"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </div>
-                </button>
-                <div 
-                  className={`transition-all duration-500 ${
-                    openIndex === index ? 'block' : 'hidden'
-                  }`}
-                >
-                  <div className="h-px w-full bg-gradient-to-r from-cyan-500/50 via-purple-500/50 to-cyan-500/50"></div>
-                  <div className="p-6">
-                    <p className="text-gray-300 bg-[#0f0f1e] p-4 rounded-lg border-l-2 border-cyan-500">{faq.answer}</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+              <AccordionTrigger className="px-6 py-4 font-bold text-gray-800 hover:text-purple-600">
+                {faq.question}
+              </AccordionTrigger>
+              <AccordionContent className="px-6 pb-4 pt-1 bg-purple-50">
+                {faq.answer}
+              </AccordionContent>
+            </AccordionItem>
           ))}
+        </Accordion>
+        
+        <div className="mt-12">
+          <Card className="border-2 border-black bg-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[6px_6px_0px_0px_rgba(139,92,246,1)] hover:border-purple-500 transition-all duration-300">
+            <CardHeader>
+              <CardTitle className="text-xl font-bold font-mono">Still have questions?</CardTitle>
+              <CardDescription>Our team is just an email away</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <p className="text-gray-600">
+                If you couldn't find the answer to your question, feel free to reach out to us directly.
+              </p>
+            </CardContent>
+            <CardFooter>
+              <Button className="border-2 border-black bg-purple-500 text-white hover:bg-purple-600">
+                Contact Support
+              </Button>
+            </CardFooter>
+          </Card>
         </div>
       </div>
     </section>
