@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { Button } from "./ui/button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "./ui/card";
 import { Badge } from "./ui/badge";
@@ -12,38 +13,28 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "./ui/tooltip";
+import { getFeaturedEvents } from "../data/eventsData";
 
 export default function EventsSection() {
-  const events = [
-    {
-      id: 1,
-      title: "Code Camp 2025",
-      date: "September 15-18, 2025",
-      location: "Virtual & Bangalore",
-      description: "A 4-day immersive coding experience with workshops, hackathons, and networking opportunities.",
-      image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
-    },
-    {
-      id: 2,
-      title: "React Deep Dive",
-      date: "October 5, 2025",
-      location: "Online",
-      description: "Master advanced React concepts with our expert instructors in this full-day workshop.",
-      image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
-    },
-    {
-      id: 3,
-      title: "Tech Career Fair",
-      date: "November 12, 2025",
-      location: "Mumbai",
-      description: "Connect with top tech companies and find your next opportunity in this exclusive hiring event.",
-      image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+  const navigate = useNavigate();
+  
+  const handleEventClick = (eventSlug: string, e?: React.MouseEvent) => {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
     }
-  ];
+    // Scroll to top before navigating to prevent the feeling of being "stuck" at the bottom
+    window.scrollTo(0, 0);
+    // Small timeout to ensure the scroll happens before navigation
+    setTimeout(() => {
+      navigate(`/events/${eventSlug}`);
+    }, 10);
+  };
+  
+  const events = getFeaturedEvents();
 
   return (
     <section id="events" className="py-24 bg-white text-gray-800 relative">
-      {/* White Sphere Grid Background */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0" style={{ 
           background: "white",
@@ -59,23 +50,32 @@ export default function EventsSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16 relative">
           <div className="inline-block">
-            <h2 className="text-4xl font-black font-mono bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600 mb-4 uppercase tracking-wider">Upcoming Events</h2>
+            <h2 className="text-4xl font-black font-mono bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600 mb-4 uppercase tracking-wider">Featured Hackathons</h2>
             <div className="h-1 w-24 bg-indigo-500 mx-auto"></div>
           </div>
           <div className="max-w-2xl mx-auto mt-6 bg-white p-4 border-l-4 border-indigo-500 shadow-[4px_4px_0px_0px_rgba(79,70,229,0.3)]">
             <p className="text-gray-700 text-lg">
-              Join us for exciting events, workshops, and meetups throughout the year.
+              Join our upcoming hackathons hosted on Devfolio and showcase your skills to the community.
             </p>
           </div>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           {events.map(event => (
             <div key={event.id} className="group relative">
               <div className="absolute inset-0.5 bg-gradient-to-r from-indigo-500/30 to-purple-500/30 rounded-xl blur opacity-30 group-hover:opacity-100 group-hover:blur-lg transition-all duration-700 animate-pulse"></div>
               <Card className="relative overflow-hidden border-indigo-500/30 shadow-[6px_6px_0px_0px_rgba(79,70,229,0.3)] hover:-translate-y-1 hover:translate-x-1 hover:shadow-[10px_10px_0px_0px_rgba(79,70,229,0.4)] hover:border-indigo-400 transition-all duration-300">
-                <div className="h-48 overflow-hidden border-b-2 border-indigo-500/50">
-                  <img src={event.image} alt={event.title} className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" />
+                <div className="h-48 overflow-hidden border-b-2 border-indigo-500/50 relative">
+                  <img 
+                    src={event.image} 
+                    alt={event.title} 
+                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" 
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end">
+                    <div className="p-3 text-white font-semibold text-lg">
+                      {event.slug.includes("delhi") ? "Delhi" : "Jaipur"}
+                    </div>
+                  </div>
                 </div>
                 <CardHeader className="p-0">
                   <div className="flex flex-col sm:flex-row gap-3 justify-between items-start p-6 pb-2">
@@ -111,9 +111,42 @@ export default function EventsSection() {
                   <CardTitle className="text-xl font-black text-gray-800 mb-3 font-mono">{event.title}</CardTitle>
                   <div className="h-1 w-12 bg-indigo-500 mb-4"></div>
                   <p className="text-gray-700 mb-5">{event.description}</p>
+                  
+                  {event.details?.prizes && (
+                    <div className="bg-indigo-50 p-3 rounded-md border border-indigo-200 mb-4">
+                      <p className="text-indigo-800 font-medium flex items-center">
+                        <svg className="w-5 h-5 mr-2 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        {event.details.prizes}
+                      </p>
+                    </div>
+                  )}
+                  
+                  {event.details?.applicationDeadline && (
+                    <div className="flex items-center text-sm text-gray-500 mt-2">
+                      <svg className="w-4 h-4 mr-1 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                      Apply by: <span className="font-medium ml-1">{event.details.applicationDeadline}</span>
+                    </div>
+                  )}
                 </CardContent>
-                <CardFooter className="px-6 pb-6 pt-0">
-                  <Button>Register Now</Button>
+                <CardFooter className="px-6 pb-6 pt-0 flex justify-between items-center">
+                  <Button 
+                    onClick={(e) => handleEventClick(event.slug, e)}
+                  >
+                    View Details
+                  </Button>
+                  <Button 
+                    variant="neutral" 
+                    onClick={(e) => {
+                      e.preventDefault();
+                      window.open(`https://devfolio.co/${event.slug}`, '_blank');
+                    }}
+                  >
+                    Register on Devfolio
+                  </Button>
                 </CardFooter>
               </Card>
             </div>
@@ -123,7 +156,11 @@ export default function EventsSection() {
         <div className="mt-16 text-center">
           <HoverCard>
             <HoverCardTrigger asChild>
-              <Button variant="neutral" size="lg">
+              <Button 
+                variant="neutral" 
+                size="lg" 
+                onClick={() => navigate('/events')}
+              >
                 View All Events
               </Button>
             </HoverCardTrigger>
@@ -132,7 +169,7 @@ export default function EventsSection() {
                 <div>
                   <h4 className="text-sm font-semibold">Event Calendar</h4>
                   <p className="text-sm text-gray-600">
-                    View our complete event calendar with 20+ upcoming events including workshops, hackathons, and meetups.
+                    View our complete event calendar with more workshops, hackathons, and tech meetups.
                   </p>
                 </div>
               </div>
