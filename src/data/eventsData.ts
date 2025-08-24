@@ -34,7 +34,7 @@ export const events: EventType[] = [
     featured: true,
     details: {
       organizer: "PKP Delhi Chapter",
-      prizes: "₹100,000 in cash prizes, mentorship opportunities, and exclusive swag kits",
+      prizes: "cash prizes, mentorship opportunities, and exclusive swag kits revealed soon",
       schedule: [
         {
           date: "October 11, 2025",
@@ -57,7 +57,7 @@ export const events: EventType[] = [
           activity: "Project Presentations & Judging"
         }
       ],
-      sponsors: ["DevCorp India", "CloudStack", "CodeFuture", "TechMinds"],
+      sponsors: ["Devfolio"],
       applicationDeadline: "October 5, 2025"
     }
   },
@@ -73,7 +73,7 @@ export const events: EventType[] = [
     featured: true,
     details: {
       organizer: "PKP Jaipur Chapter",
-      prizes: "₹150,000 prize pool, startup incubation opportunities, and tech gadgets",
+      prizes: "prize pool, startup incubation opportunities, and tech gadgets revelaed soon",
       schedule: [
         {
           date: "October 18, 2025",
@@ -96,7 +96,7 @@ export const events: EventType[] = [
           activity: "Demo Sessions & Evaluation"
         }
       ],
-      sponsors: ["InnovateHub", "DigitalSolutions", "NextGenAI", "StartupBoost"],
+      sponsors: ["Devfolio"],
       applicationDeadline: "October 12, 2025"
     }
   },
