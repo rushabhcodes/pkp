@@ -76,20 +76,15 @@ export default function EventDetailPage() {
                 </div>
               </div>
               <div className="flex gap-4">
-                <Button 
-                  variant="neutral" 
-                  className="bg-white text-indigo-700 border-white hover:bg-indigo-50"
-                  onClick={() => window.history.back()}
-                >
-                  Back to Events
-                </Button>
-                <Button
-                  onClick={() => {
-                    window.open(`https://devfolio.co/${event.slug}`, '_blank');
-                  }}
-                >
-                  Register on Devfolio
-                </Button>
+                {event.registrationLink && (
+                  <Button
+                    onClick={() => {
+                      window.open(event.registrationLink, '_blank');
+                    }}
+                  >
+                    Register on {event.registrationPlatform || 'Platform'}
+                  </Button>
+                )}
               </div>
             </div>
           </div>
@@ -191,15 +186,17 @@ export default function EventDetailPage() {
               )}
               
               <div className="mt-8 text-center">
-                <Button
-                  size="lg"
-                  onClick={() => {
-                    window.open(`https://devfolio.co/${event.slug}`, '_blank');
-                  }}
-                >
-                  Register Now
-                </Button>
-                <p className="text-sm text-gray-500 mt-2">Registration closes on {event.details?.applicationDeadline}</p>
+                {event.registrationLink && (
+                  <Button
+                    size="lg"
+                    onClick={() => {
+                      window.open(event.registrationLink, '_blank');
+                    }}
+                  >
+                    Register on {event.registrationPlatform || 'Platform'}
+                  </Button>
+                )}
+                <p className="text-sm text-gray-500 mt-2">{event.details?.applicationDeadline ? `Registration closes on ${event.details.applicationDeadline}` : ''}</p>
               </div>
             </div>
           </div>
