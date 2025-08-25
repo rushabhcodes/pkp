@@ -34,7 +34,7 @@ export const events: EventType[] = [
     featured: true,
     details: {
       organizer: "PKP Delhi Chapter",
-      prizes: "cash prizes, mentorship opportunities, and exclusive swag kits revealed soon",
+      prizes: "₹15,000 in cash prizes, mentorship opportunities, and exclusive swag kits revealed soon",
       schedule: [
         {
           date: "October 11, 2025",
@@ -73,7 +73,7 @@ export const events: EventType[] = [
     featured: true,
     details: {
       organizer: "PKP Jaipur Chapter",
-      prizes: "prize pool, startup incubation opportunities, and tech gadgets revelaed soon",
+      prizes: "₹15,000 in prize pool, startup incubation opportunities, and tech gadgets revelaed soon",
       schedule: [
         {
           date: "October 18, 2025",

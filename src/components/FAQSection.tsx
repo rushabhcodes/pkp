@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
   Accordion,
   AccordionContent,
@@ -16,6 +17,7 @@ import {
 } from './ui/card';
 
 export default function FAQSection() {
+
   const faqs = [
     {
       question: "How do I join Programmers ka Parivar?",
@@ -47,6 +49,13 @@ export default function FAQSection() {
     }
   ];
   
+  const [search, setSearch] = useState('');
+  const [query, setQuery] = useState('');
+  const filteredFaqs = faqs.filter(faq =>
+    faq.question.toLowerCase().includes(query.toLowerCase()) ||
+    faq.answer.toLowerCase().includes(query.toLowerCase())
+  );
+
   return (
     <section id="faq" className="py-24 bg-white text-gray-800 relative overflow-hidden">
       {/* White Sphere Grid Background */}
@@ -74,33 +83,48 @@ export default function FAQSection() {
               Got questions? We've got answers.
             </p>
             
-            <div className="mt-4 flex gap-2">
-              <Input 
-                placeholder="Search FAQs..." 
+            <form
+              className="mt-4 flex gap-2"
+              onSubmit={e => {
+                e.preventDefault();
+                setQuery(search);
+              }}
+            >
+              <Input
+                placeholder="Search FAQs..."
+                value={search}
+                onChange={e => setSearch(e.target.value)}
                 className="border-2 border-black focus-visible:ring-purple-500"
               />
-              <Button className="border-2 border-black bg-purple-500 text-white hover:bg-purple-600">
+              <Button
+                type="submit"
+                className="border-2 border-black bg-purple-500 text-white hover:bg-purple-600"
+              >
                 Search
               </Button>
-            </div>
+            </form>
           </div>
         </div>
         
         <Accordion type="single" collapsible className="space-y-6">
-          {faqs.map((faq, index) => (
-            <AccordionItem 
-              key={index}
-              value={`item-${index}`}
-              className="border-2 border-black bg-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] group hover:shadow-[6px_6px_0px_0px_rgba(139,92,246,1)] hover:border-purple-500 hover:-translate-y-1 hover:translate-x-1 transition-all duration-300"
-            >
-              <AccordionTrigger className="px-6 py-4 font-bold text-gray-800 hover:text-purple-600">
-                {faq.question}
-              </AccordionTrigger>
-              <AccordionContent className="px-6 pb-4 pt-1 bg-purple-50">
-                {faq.answer}
-              </AccordionContent>
-            </AccordionItem>
-          ))}
+          {filteredFaqs.length > 0 ? (
+            filteredFaqs.map((faq, index) => (
+              <AccordionItem
+                key={index}
+                value={`item-${index}`}
+                className="border-2 border-black bg-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] group hover:shadow-[6px_6px_0px_0px_rgba(139,92,246,1)] hover:border-purple-500 hover:-translate-y-1 hover:translate-x-1 transition-all duration-300"
+              >
+                <AccordionTrigger className="px-6 py-4 font-bold text-gray-800 hover:text-purple-600">
+                  {faq.question}
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-4 pt-1 bg-purple-50">
+                  {faq.answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))
+          ) : (
+            <div className="text-center py-8 text-gray-500">No FAQs found for your search.</div>
+          )}
         </Accordion>
         
         <div className="mt-12">
@@ -115,9 +139,11 @@ export default function FAQSection() {
               </p>
             </CardContent>
             <CardFooter>
-              <Button className="border-2 border-black bg-purple-500 text-white hover:bg-purple-600">
-                Contact Support
-              </Button>
+              <a href="mailto:contact@pkp.codes">
+                <Button className="border-2 border-black bg-purple-500 text-white hover:bg-purple-600">
+                  Contact Support
+                </Button>
+              </a>
             </CardFooter>
           </Card>
         </div>
