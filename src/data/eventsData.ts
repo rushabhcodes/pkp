@@ -26,171 +26,226 @@ export interface EventType {
 export const events: EventType[] = [
   {
     id: 1,
-    title: "PKP Delhi Hackathon 2025",
-    slug: "pkp-delhi-2025",
-    date: "October 11-12, 2025",
-    location: "Online",
-    description: "Join us for the PKP Delhi Hackathon 2025, a 24-hour virtual coding event where teams compete to build innovative solutions to real-world problems.",
-    image: "https://images.unsplash.com/photo-1587474260584-136574528ed5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
-    category: "Hackathon",
+    title: 'PKP Delhi Hackathon 2025',
+    slug: 'pkp-delhi-2025',
+    date: 'October 11-12, 2025',
+    location: 'Online',
+    description:
+      'Join us for the PKP Delhi Hackathon 2025, a 24-hour virtual coding event where teams compete to build innovative solutions to real-world problems.',
+    image:
+      'https://images.unsplash.com/photo-1587474260584-136574528ed5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+    category: 'Hackathon',
     featured: true,
-  registrationLink: "https://devfolio.co/pkp-delhi-2025",
-  registrationPlatform: "Devfolio",
-  details: {
-      organizer: "PKP Delhi Chapter",
-      prizes: "₹15,000 in cash prizes, mentorship opportunities, and exclusive swag kits revealed soon",
+    registrationLink: 'https://devfolio.co/pkp-delhi-2025',
+    registrationPlatform: 'Devfolio',
+    details: {
+      organizer: 'PKP Delhi Chapter',
+      prizes:
+        '₹15,000 in cash prizes, mentorship opportunities, and exclusive swag kits revealed soon',
       schedule: [
         {
-          date: "October 11, 2025",
-          time: "9:00 AM - 10:30 AM",
-          activity: "Opening Ceremony & Team Formation"
+          date: 'September 01, 2025',
+          time: '12:00 AM',
+          activity: 'Registration Begins',
         },
         {
-          date: "October 11, 2025",
-          time: "11:00 AM - 1:00 PM",
-          activity: "Workshops & Problem Statement Reveal"
+          date: 'October 05, 2025',
+          time: '11:59 PM',
+          activity: 'Registration Closes',
         },
         {
-          date: "October 11-12, 2025",
-          time: "1:00 PM - 8:00 AM",
-          activity: "Hacking Period with Mentor Sessions"
+          date: 'October 11, 2025',
+          time: '10:00 PM - 10:30 AM',
+          activity: 'Inaugural Ceremony',
         },
         {
-          date: "October 12, 2025",
-          time: "2:00 PM - 4:30 PM",
-          activity: "Project Presentations & Judging"
-        }
+          date: 'October 11, 2025',
+          time: '10:30 AM',
+          activity: 'Problem Statements Released & Hacking Begins',
+        },
+        {
+          date: 'October 11, 2025',
+          time: '3:00 PM - 7:00 PM',
+          activity: 'Mentoring Sessions',
+        },
+        {
+          date: 'October 12, 2025',
+          time: '10:00 AM - 2:00 PM',
+          activity: 'Judging Round and Closing Ceremony',
+        },
+        {
+          date: 'October 12, 2025',
+          time: '7:00 PM',
+          activity: 'Results Announcement',
+        },
       ],
-      sponsors: ["Devfolio"],
-      applicationDeadline: "October 5, 2025"
-    }
+      sponsors: ['Devfolio'],
+      applicationDeadline: 'October 5, 2025',
+    },
   },
   {
     id: 2,
-    title: "PKP Jaipur Hackathon 2025",
-    slug: "pkp-jaipur-2025",
-    date: "October 18-19, 2025",
-    location: "Online",
-    description: "PKP Jaipur Hackathon brings together developers, designers, and innovators for a weekend of coding, creativity, and problem-solving.",
-    image: "https://images.unsplash.com/photo-1477587458883-47145ed94245?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0",
-    category: "Hackathon",
+    title: 'PKP Jaipur Hackathon 2025',
+    slug: 'pkp-jaipur-2025',
+    date: 'October 18-19, 2025',
+    location: 'Online',
+    description:
+      'PKP Jaipur Hackathon brings together developers, designers, and innovators for a weekend of coding, creativity, and problem-solving.',
+    image:
+      'https://images.unsplash.com/photo-1477587458883-47145ed94245?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0',
+    category: 'Hackathon',
     featured: true,
-  registrationLink: "https://devfolio.co/pkp-jaipur-2025",
-  registrationPlatform: "Devfolio",
-  details: {
-      organizer: "PKP Jaipur Chapter",
-      prizes: "₹15,000 in prize pool, startup incubation opportunities, and tech gadgets revelaed soon",
+    registrationLink: 'https://devfolio.co/pkp-jaipur-2025',
+    registrationPlatform: 'Devfolio',
+    details: {
+      organizer: 'PKP Jaipur Chapter',
+      prizes:
+        '₹15,000 in prize pool, startup incubation opportunities, and tech gadgets revelaed soon',
       schedule: [
         {
-          date: "October 18, 2025",
-          time: "8:30 AM - 10:00 AM",
-          activity: "Registration & Kickoff Event"
+          date: 'September 01, 2025',
+          time: '12:00 AM',
+          activity: 'Registration Begins',
         },
         {
-          date: "October 18, 2025",
-          time: "10:30 AM - 12:30 PM",
-          activity: "Tech Talks & Challenge Introduction"
+          date: 'October 12, 2025',
+          time: '11:59 PM',
+          activity: 'Registration Closes',
         },
         {
-          date: "October 18-19, 2025",
-          time: "1:00 PM - 10:00 AM",
-          activity: "Coding Marathon with Expert Support"
+          date: 'October 18, 2025',
+          time: '10:00 PM - 10:30 AM',
+          activity: 'Inaugural Ceremony',
         },
         {
-          date: "October 19, 2025",
-          time: "2:30 PM - 5:00 PM",
-          activity: "Demo Sessions & Evaluation"
-        }
+          date: 'October 18, 2025',
+          time: '10:30 AM',
+          activity: 'Problem Statements Released & Hacking Begins',
+        },
+        {
+          date: 'October 18, 2025',
+          time: '3:00 PM - 7:00 PM',
+          activity: 'Mentoring Sessions',
+        },
+        {
+          date: 'October 19, 2025',
+          time: '10:00 AM - 2:00 PM',
+          activity: 'Judging Round and Closing Ceremony',
+        },
+        {
+          date: 'October 19, 2025',
+          time: '7:00 PM',
+          activity: 'Results Announcement',
+        },
       ],
-      sponsors: ["Devfolio"],
-      applicationDeadline: "October 12, 2025"
-    }
+      sponsors: ['Devfolio'],
+      applicationDeadline: 'October 12, 2025',
+    },
   },
   {
     id: 3,
-    title: "PKP Mumbai Hackathon 2025",
-    slug: "pkp-mumbai-2025",
-    date: "December 6-7, 2025",
-    location: "Online",
-    description: "A weekend of innovation, learning, and collaboration at Mumbai's premier hackathon event.",
-    image: "https://images.unsplash.com/photo-1529655683826-aba9b3e77383?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
-    category: "Hackathon",
+    title: 'PKP Mumbai Hackathon 2025',
+    slug: 'pkp-mumbai-2025',
+    date: 'December 6-7, 2025',
+    location: 'Online',
+    description:
+      "A weekend of innovation, learning, and collaboration at Mumbai's premier hackathon event.",
+    image:
+      'https://images.unsplash.com/photo-1529655683826-aba9b3e77383?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+    category: 'Hackathon',
     featured: true,
-    registrationLink: "https://unstop.com/hackathon/pkp-mumbai-hackathon-2025",
-    registrationPlatform: "Unstop",
+    registrationLink: 'https://unstop.com/hackathon/pkp-mumbai-hackathon-2025',
+    registrationPlatform: 'Unstop',
     details: {
-      organizer: "PKP Mumbai Chapter",
-      prizes: "₹30,000 in cash prizes, internship opportunities, and exclusive swag kits",
+      organizer: 'PKP Mumbai Chapter',
+      prizes:
+        '₹30,000 in cash prizes, internship opportunities, and exclusive swag kits',
       schedule: [
         {
-          date: "December 6, 2025",
-          time: "9:00 AM - 10:00 AM",
-          activity: "Welcome & Registration"
+          date: 'August 26, 2025',
+          time: '12:00 AM',
+          activity: 'Registration Begins',
         },
         {
-          date: "December 6, 2025",
-          time: "10:00 AM - 11:30 AM",
-          activity: "Keynote & Problem Statement Reveal"
+          date: 'December 01, 2025',
+          time: '11:59 PM',
+          activity: 'Registration Closes',
         },
         {
-          date: "December 6-7, 2025",
-          time: "12:00 PM - 8:00 AM",
-          activity: "Hacking Period & Mentor Sessions"
+          date: 'December 06, 2025',
+          time: '10:00 PM - 10:30 AM',
+          activity: 'Inaugural Ceremony',
         },
         {
-          date: "December 7, 2025",
-          time: "9:00 AM - 12:00 PM",
-          activity: "Final Submissions & Demos"
+          date: 'December 06, 2025',
+          time: '10:30 AM',
+          activity: 'Problem Statements Released & Hacking Begins',
         },
         {
-          date: "December 7, 2025",
-          time: "1:00 PM - 3:00 PM",
-          activity: "Judging & Awards Ceremony"
-        }
+          date: 'December 06, 2025',
+          time: '3:00 PM - 7:00 PM',
+          activity: 'Mentoring Sessions',
+        },
+        {
+          date: 'December 07, 2025',
+          time: '10:00 AM - 2:00 PM',
+          activity: 'Judging Round and Closing Ceremony',
+        },
+        {
+          date: 'December 07, 2025',
+          time: '7:00 PM',
+          activity: 'Results Announcement',
+        },
       ],
-      sponsors: ["Devfolio", "TechMinds", "CloudStack"],
-      applicationDeadline: "December 1, 2025"
-    }
+      sponsors: ['Devfolio', 'Appwrite', 'Devtonius'],
+      applicationDeadline: 'December 1, 2025',
+    },
   },
-  {
-    id: 4,
-    title: "Web Development Workshop",
-    slug: "web-dev-workshop",
-    date: "December 5, 2025",
-    location: "Online",
-    description: "A comprehensive workshop on modern web development techniques, frameworks, and best practices.",
-    image: "https://images.unsplash.com/photo-1593720219276-0b1eacd0aef4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
-    category: "Workshop"
-  },
-  {
-    id: 5,
-    title: "Tech Meetup 2026",
-    slug: "tech-meetup-2026",
-    date: "January 15, 2026",
-    location: "Bangalore",
-    description: "Connect with like-minded tech enthusiasts, share ideas, and explore collaboration opportunities.",
-    image: "https://images.unsplash.com/photo-1591115765373-5207764f72e7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
-    category: "Networking"
-  },
-  {
-    id: 6,
-    title: "PKP Tech Conference",
-    slug: "pkp-tech-conference",
-    date: "February 10-12, 2026",
-    location: "Delhi",
-    description: "A three-day conference featuring industry leaders, technical workshops, and networking opportunities.",
-    image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
-    category: "Conference"
-  }
+  // {
+  //   id: 4,
+  //   title: 'Web Development Workshop',
+  //   slug: 'web-dev-workshop',
+  //   date: 'December 5, 2025',
+  //   location: 'Online',
+  //   description:
+  //     'A comprehensive workshop on modern web development techniques, frameworks, and best practices.',
+  //   image:
+  //     'https://images.unsplash.com/photo-1593720219276-0b1eacd0aef4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+  //   category: 'Workshop',
+  // },
+  // {
+  //   id: 5,
+  //   title: 'Tech Meetup 2026',
+  //   slug: 'tech-meetup-2026',
+  //   date: 'January 15, 2026',
+  //   location: 'Bangalore',
+  //   description:
+  //     'Connect with like-minded tech enthusiasts, share ideas, and explore collaboration opportunities.',
+  //   image:
+  //     'https://images.unsplash.com/photo-1591115765373-5207764f72e7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+  //   category: 'Networking',
+  // },
+  // {
+  //   id: 6,
+  //   title: 'PKP Tech Conference',
+  //   slug: 'pkp-tech-conference',
+  //   date: 'February 10-12, 2026',
+  //   location: 'Delhi',
+  //   description:
+  //     'A three-day conference featuring industry leaders, technical workshops, and networking opportunities.',
+  //   image:
+  //     'https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+  //   category: 'Conference',
+  // },
 ];
 
 // Helper functions
 export const getFeaturedEvents = (): EventType[] => {
-  return events.filter(event => event.featured);
+  return events.filter((event) => event.featured);
 };
 
 export const getEventBySlug = (slug: string): EventType | undefined => {
-  return events.find(event => event.slug === slug);
+  return events.find((event) => event.slug === slug);
 };
 
 export const getAllEvents = (): EventType[] => {
