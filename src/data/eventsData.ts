@@ -8,6 +8,8 @@ export interface EventType {
   image: string;
   featured?: boolean;
   category?: string;
+  registrationLink?: string;
+  registrationPlatform?: string;
   details?: {
     organizer?: string;
     prizes?: string;
@@ -104,12 +106,14 @@ export const events: EventType[] = [
     id: 3,
     title: "PKP Mumbai Hackathon 2025",
     slug: "pkp-mumbai-2025",
-  date: "December 6-7, 2025",
+    date: "December 6-7, 2025",
     location: "Online",
     description: "A weekend of innovation, learning, and collaboration at Mumbai's premier hackathon event.",
     image: "https://images.unsplash.com/photo-1529655683826-aba9b3e77383?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
     category: "Hackathon",
     featured: true,
+    registrationLink: "https://unstop.com/hackathon/pkp-mumbai-hackathon-2025",
+    registrationPlatform: "Unstop",
     details: {
       organizer: "PKP Mumbai Chapter",
       prizes: "₹30,000 in cash prizes, internship opportunities, and exclusive swag kits",

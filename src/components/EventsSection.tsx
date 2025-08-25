@@ -138,15 +138,27 @@ export default function EventsSection() {
                   >
                     View Details
                   </Button>
-                  <Button 
-                    variant="neutral" 
-                    onClick={(e) => {
-                      e.preventDefault();
-                      window.open(`https://devfolio.co/${event.slug}`, '_blank');
-                    }}
-                  >
-                    Register on Devfolio
-                  </Button>
+                  {event.registrationLink ? (
+                    <Button 
+                      variant="neutral" 
+                      onClick={(e) => {
+                        e.preventDefault();
+                        window.open(event.registrationLink, '_blank');
+                      }}
+                    >
+                      Register on {event.registrationPlatform || 'Platform'}
+                    </Button>
+                  ) : (
+                    <Button 
+                      variant="neutral" 
+                      onClick={(e) => {
+                        e.preventDefault();
+                        window.open(`https://devfolio.co/${event.slug}`, '_blank');
+                      }}
+                    >
+                      Register on Devfolio
+                    </Button>
+                  )}
                 </CardFooter>
               </Card>
             </div>
