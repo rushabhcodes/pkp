@@ -125,7 +125,7 @@ export default function Footer() {
                     <TooltipTrigger asChild>
                       <p className="flex items-start cursor-pointer">
                         <span className="w-2 h-2 mt-1.5 mr-3 bg-cyan-600"></span>
-                        <span className="text-gray-600 hover:text-cyan-600 transition-colors duration-300">contact@pkp.org</span>
+                        <span className="text-gray-600 hover:text-cyan-600 transition-colors duration-300">contact@pkp.codes</span>
                       </p>
                     </TooltipTrigger>
                     <TooltipContent className="bg-white border border-cyan-500/30 text-gray-800">

@@ -27,15 +27,23 @@ export default function FAQSection() {
     },
     {
       question: "Can I contribute to the community as a beginner?",
-      answer: "Absolutely! We welcome developers of all skill levels. Beginners can participate in mentorship programs, study groups, and contribute to beginner-friendly open source projects we maintain."
+      answer: "Absolutely! We welcome developers of all skill levels. Beginners can participate in study groups and contribute to beginner-friendly open source projects we maintain."
     },
     {
-      question: "Do you offer mentorship programs?",
-      answer: "Yes, we run quarterly mentorship cohorts where experienced developers are paired with those looking to grow their skills. Applications open at the beginning of each quarter."
+      question: "Where do events take place?",
+      answer: "Events are held both online and in-person across major cities in India. Check the Events section for details and locations."
+    },
+    {
+      question: "Is there a code of conduct?",
+      answer: "Yes, we have a strict code of conduct to ensure a safe and inclusive environment for all members. Please review it before participating in any event or discussion."
     },
     {
       question: "How can my company sponsor or partner with Programmers ka Parivar?",
-      answer: "We're always looking for partnerships that benefit our community! Please reach out to us at partnerships@pkp.org to discuss sponsorship opportunities, event collaborations, or other partnerships."
+  answer: "We're always looking for partnerships that benefit our community! Please reach out to us at partnerships@pkp.codes to discuss sponsorship opportunities, event collaborations, or other partnerships."
+    },
+    {
+      question: "How do I get updates about upcoming events?",
+      answer: "Join our Discord server and follow us on social media to stay updated about upcoming events, workshops, and meetups."
     }
   ];
   

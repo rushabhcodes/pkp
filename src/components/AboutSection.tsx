@@ -100,12 +100,12 @@ export default function AboutSection() {
                     <path strokeLinecap="square" strokeLinejoin="miter" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
                   </svg>
                 </div>
-                <CardTitle className="text-xl font-black text-gray-800 font-mono">Community Support</CardTitle>
+                <CardTitle className="text-xl font-black text-gray-800 font-mono">Collaboration & Networking</CardTitle>
                 <div className="h-1 w-12 bg-purple-500 mt-2"></div>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600 text-sm">
-                  We provide peer mentorship and code reviews to ensure no developer faces challenges alone.
+                  Connect with fellow developers, join project teams, and expand your professional network through our vibrant community events.
                 </p>
               </CardContent>
             </Card>
@@ -211,15 +211,15 @@ export default function AboutSection() {
               <CardContent>
                 <div className="grid grid-cols-3 gap-4">
                   <div className="text-center">
-                    <div className="text-3xl font-bold font-mono text-purple-600 mb-1">5K+</div>
+                    <div className="text-3xl font-bold font-mono text-purple-600 mb-1">2K+</div>
                     <div className="text-gray-500 text-sm">Members</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-3xl font-bold font-mono text-purple-600 mb-1">250+</div>
+                    <div className="text-3xl font-bold font-mono text-purple-600 mb-1">10+</div>
                     <div className="text-gray-500 text-sm">Events</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-3xl font-bold font-mono text-purple-600 mb-1">40+</div>
+                    <div className="text-3xl font-bold font-mono text-purple-600 mb-1">90+</div>
                     <div className="text-gray-500 text-sm">Projects</div>
                   </div>
                 </div>

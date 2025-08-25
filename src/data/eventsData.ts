@@ -28,7 +28,7 @@ export const events: EventType[] = [
     slug: "pkp-delhi-2025",
     date: "October 11-12, 2025",
     location: "Online",
-    description: "Join us for the PKP Delhi Hackathon 2025, a 36-hour virtual coding event where teams compete to build innovative solutions to real-world problems.",
+    description: "Join us for the PKP Delhi Hackathon 2025, a 24-hour virtual coding event where teams compete to build innovative solutions to real-world problems.",
     image: "https://images.unsplash.com/photo-1587474260584-136574528ed5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
     category: "Hackathon",
     featured: true,
@@ -104,15 +104,44 @@ export const events: EventType[] = [
     id: 3,
     title: "PKP Mumbai Hackathon 2025",
     slug: "pkp-mumbai-2025",
-    date: "November 15-16, 2025",
-    location: "Mumbai",
+  date: "December 6-7, 2025",
+    location: "Online",
     description: "A weekend of innovation, learning, and collaboration at Mumbai's premier hackathon event.",
     image: "https://images.unsplash.com/photo-1529655683826-aba9b3e77383?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
     category: "Hackathon",
+    featured: true,
     details: {
       organizer: "PKP Mumbai Chapter",
-      prizes: "₹200,000 in cash prizes and internship opportunities",
-      applicationDeadline: "November 8, 2025"
+      prizes: "₹30,000 in cash prizes, internship opportunities, and exclusive swag kits",
+      schedule: [
+        {
+          date: "December 6, 2025",
+          time: "9:00 AM - 10:00 AM",
+          activity: "Welcome & Registration"
+        },
+        {
+          date: "December 6, 2025",
+          time: "10:00 AM - 11:30 AM",
+          activity: "Keynote & Problem Statement Reveal"
+        },
+        {
+          date: "December 6-7, 2025",
+          time: "12:00 PM - 8:00 AM",
+          activity: "Hacking Period & Mentor Sessions"
+        },
+        {
+          date: "December 7, 2025",
+          time: "9:00 AM - 12:00 PM",
+          activity: "Final Submissions & Demos"
+        },
+        {
+          date: "December 7, 2025",
+          time: "1:00 PM - 3:00 PM",
+          activity: "Judging & Awards Ceremony"
+        }
+      ],
+      sponsors: ["Devfolio", "TechMinds", "CloudStack"],
+      applicationDeadline: "December 1, 2025"
     }
   },
   {

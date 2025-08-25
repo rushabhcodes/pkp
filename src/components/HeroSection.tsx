@@ -22,7 +22,7 @@ import {
 
 export default function HeroSection() {
   return (
-    <div className="min-h-screen w-full bg-white relative">
+  <div id="hero" className="min-h-screen w-full bg-white relative pt-20 sm:pt-24">
       {/* White Sphere Grid Background */}
       <div
         className="absolute inset-0 z-0"
@@ -39,7 +39,7 @@ export default function HeroSection() {
 
       {/* Main Content */}
       <div className="relative z-10 min-h-screen flex flex-col items-center justify-center text-gray-800 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="w-full max-w-4xl mx-auto text-center flex flex-col gap-8">
           {/* Brutalist heading with glitch effect */}
           <div className="space-y-2 mb-6">
             <div className="flex justify-center mb-3">
@@ -47,10 +47,9 @@ export default function HeroSection() {
                 Community • Learning • Collaboration
               </Badge>
             </div>
-            <div className="relative inline-block">
+            <div className="relative inline-block w-full">
               <h1
-                className="text-5xl md:text-6xl font-bold font-mono tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600 
-                            animate-pulse relative z-10"
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-mono tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600 animate-pulse relative z-10 break-words"
               >
                 Programmers ka Parivar
               </h1>
@@ -58,23 +57,25 @@ export default function HeroSection() {
             </div>
           </div>
 
-         <Card className="border-indigo-500/50 shadow-[5px_5px_0px_0px_rgba(79,70,229,0.3)]">
+         <Card className="border-indigo-500/50 shadow-[5px_5px_0px_0px_rgba(79,70,229,0.3)] mx-2 sm:mx-auto w-full sm:w-[90%] md:w-[80%] lg:w-[70%]">
   <CardHeader>
     <CardTitle className="text-indigo-600 font-mono">TECH COMMUNITY</CardTitle>
     <CardDescription className="text-gray-500">For developers, by developers</CardDescription>
   </CardHeader>
   <CardContent>
-    <p className="text-xl md:text-2xl font-semibold mb-4">
+  <p className="text-base sm:text-lg md:text-2xl font-semibold mb-4">
       Where code meets community. Learn, share, and grow together.
     </p>
-    <Marquee items={["React", "TypeScript", "Node.js", "Python", "Java", "Flutter", "Rust", "Go", "AWS", "DevOps", "AI/ML", "Web3"]} />
+    <div className="w-full overflow-x-auto">
+      <Marquee items={["React", "TypeScript", "Node.js", "Python", "Java", "Flutter", "Rust", "Go", "AWS", "DevOps", "AI/ML", "Web3"]} />
+    </div>
   </CardContent>
 </Card>
 
-          <div className="flex flex-wrap justify-center gap-6 mt-10">
+          <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4 sm:gap-6 mt-10 w-full items-center">
             <HoverCard>
               <HoverCardTrigger asChild>
-                <Button asChild>
+                <Button asChild className="w-full sm:w-auto">
                   <a  
                   href="https://discord.gg/UwmUS9xKsF"
                   target="_blank"
@@ -84,7 +85,7 @@ export default function HeroSection() {
                   </a>
                 </Button>
               </HoverCardTrigger>
-              <HoverCardContent className="w-80 bg-white border border-indigo-200">
+              <HoverCardContent className="w-72 sm:w-80 bg-white border border-indigo-200">
                 <div className="flex justify-between space-x-4">
                   <div>
                     <h4 className="text-sm font-semibold">Join our Discord</h4>
@@ -96,7 +97,7 @@ export default function HeroSection() {
               </HoverCardContent>
             </HoverCard>
 
-            <Button variant={"neutral"} asChild>
+            <Button variant={"neutral"} asChild className="w-full sm:w-auto">
               <a href="#events">
                 Explore Events
               </a>
@@ -106,23 +107,25 @@ export default function HeroSection() {
           <TooltipProvider>
             <Tooltip>
               <TooltipTrigger asChild>
-                <Button 
-                  variant="noShadow" 
-                  size="icon" 
-                  className="mt-6 animate-bounce bg-indigo-100 border-indigo-300 text-indigo-600 rounded-full h-10 w-10 p-0"
-                >
-                  <svg
-                    className="w-5 h-5"
-                    fill="none"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
+                <div className="flex justify-center w-full">
+                  <Button 
+                    variant="noShadow" 
+                    size="icon" 
+                    className="mt-6 animate-bounce bg-indigo-100 border-indigo-300 text-indigo-600 rounded-full h-10 w-10 p-0"
                   >
-                    <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-                  </svg>
-                </Button>
+                    <svg
+                      className="w-5 h-5"
+                      fill="none"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                  </Button>
+                </div>
               </TooltipTrigger>
               <TooltipContent className="bg-white border border-indigo-500/30 text-gray-800">
                 <p>Scroll Down</p>

@@ -60,7 +60,7 @@ export default function EventsSection() {
           </div>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {events.map(event => (
             <div key={event.id} className="group relative">
               <div className="absolute inset-0.5 bg-gradient-to-r from-indigo-500/30 to-purple-500/30 rounded-xl blur opacity-30 group-hover:opacity-100 group-hover:blur-lg transition-all duration-700 animate-pulse"></div>
@@ -73,7 +73,7 @@ export default function EventsSection() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end">
                     <div className="p-3 text-white font-semibold text-lg">
-                      {event.slug.includes("delhi") ? "Delhi" : "Jaipur"}
+                      {event.slug.replace(/^pkp-([^-]+)-.*$/, (_, loc) => loc.charAt(0).toUpperCase() + loc.slice(1))}
                     </div>
                   </div>
                 </div>

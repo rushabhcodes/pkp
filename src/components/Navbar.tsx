@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -13,7 +13,6 @@ export default function Navbar() {
       if (isScrolled !== scrolled) {
         setScrolled(isScrolled);
       }
-      
       // Only update active section based on scroll when on homepage
       if (location.pathname === '/') {
         const sections = ['home', 'about', 'events', 'faq'];
@@ -25,7 +24,6 @@ export default function Navbar() {
           }
           return false;
         }) || 'home';
-        
         setActiveSection(current);
       } else {
         // Set active section based on current route
@@ -33,11 +31,26 @@ export default function Navbar() {
         else if (location.pathname === '/events' || location.pathname.startsWith('/events/')) setActiveSection('events');
       }
     };
-
     handleScroll(); // Call once to set initial state
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, [scrolled, location]);
+
+  // Smooth scroll to section and update activeSection
+  const scrollToSection = (section: string) => {
+    setActiveSection(section);
+    setMobileMenuOpen(false);
+    let targetId = section;
+    if (section === 'home') targetId = 'hero';
+    if (location.pathname !== '/') {
+      window.location.href = `/#${targetId}`;
+      return;
+    }
+    const el = document.getElementById(targetId);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
 
   return (
     <div className="fixed top-0 left-0 right-0 z-50 flex justify-center pt-5 px-4">
@@ -47,7 +60,14 @@ export default function Navbar() {
         ${scrolled ? 'rounded-lg' : 'rounded-xl'}`}>
         <div className="flex items-center justify-between">
           <div className="flex-shrink-0 mx-1">
-            <Link to="/" className="text-xl font-mono font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-cyan-600 hover:opacity-80 transition-opacity">PKP</Link>
+            <button
+              type="button"
+              className="text-xl font-mono font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-cyan-600 hover:opacity-80 transition-opacity focus:outline-none"
+              aria-label="Go to Hero Section"
+              onClick={() => scrollToSection('home')}
+            >
+              PKP
+            </button>
           </div>
           
           {/* Desktop Navigation */}
@@ -62,30 +82,38 @@ export default function Navbar() {
                 rounded-md border border-purple-300 shadow-[3px_3px_0px_0px_rgba(139,92,246,0.3)]
               `}></div>
               
-              <Link to="/" 
+              <button
                 className={`px-4 py-1.5 rounded-md text-sm font-mono font-medium transition-all duration-300 
                 ${activeSection === 'home' ? 'text-purple-600 font-bold' : 'text-gray-600 hover:text-black'}`}
-                onClick={() => setActiveSection('home')}>
+                aria-current={activeSection === 'home' ? 'page' : undefined}
+                onClick={() => scrollToSection('home')}
+              >
                 HOME
-              </Link>
-              <Link to="/#about" 
+              </button>
+              <button
                 className={`px-4 py-1.5 rounded-md text-sm font-mono font-medium transition-all duration-300 
                 ${activeSection === 'about' ? 'text-purple-600 font-bold' : 'text-gray-600 hover:text-black'}`}
-                onClick={() => setActiveSection('about')}>
+                aria-current={activeSection === 'about' ? 'page' : undefined}
+                onClick={() => scrollToSection('about')}
+              >
                 ABOUT
-              </Link>
-              <Link to="/events" 
+              </button>
+              <button
                 className={`px-4 py-1.5 rounded-md text-sm font-mono font-medium transition-all duration-300 
                 ${activeSection === 'events' ? 'text-purple-600 font-bold' : 'text-gray-600 hover:text-black'}`}
-                onClick={() => setActiveSection('events')}>
+                aria-current={activeSection === 'events' ? 'page' : undefined}
+                onClick={() => scrollToSection('events')}
+              >
                 EVENTS
-              </Link>
-              <Link to="/#faq" 
+              </button>
+              <button
                 className={`px-4 py-1.5 rounded-md text-sm font-mono font-medium transition-all duration-300 
                 ${activeSection === 'faq' ? 'text-purple-600 font-bold' : 'text-gray-600 hover:text-black'}`}
-                onClick={() => setActiveSection('faq')}>
+                aria-current={activeSection === 'faq' ? 'page' : undefined}
+                onClick={() => scrollToSection('faq')}
+              >
                 FAQ
-              </Link>
+              </button>
             </div>
           </div>
           
@@ -130,38 +158,46 @@ export default function Navbar() {
           shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]
           backdrop-blur-lg z-50 transition-all duration-300 transform origin-top">
           <div className="p-4 space-y-3">
-            <Link to="/" 
+            <button
               className={`block px-4 py-3 text-center font-mono font-medium tracking-wider transition-all duration-300 border-2 
               ${activeSection === 'home' 
                 ? 'bg-purple-100 text-purple-600 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]' 
                 : 'text-gray-600 border-gray-300 hover:border-black hover:shadow-[2px_2px_0px_0px_rgba(139,92,246,0.5)]'}`}
-              onClick={() => {setActiveSection('home'); setMobileMenuOpen(false);}}>
+              aria-current={activeSection === 'home' ? 'page' : undefined}
+              onClick={() => scrollToSection('home')}
+            >
               HOME
-            </Link>
-            <Link to="/#about" 
+            </button>
+            <button
               className={`block px-4 py-3 text-center font-mono font-medium tracking-wider transition-all duration-300 border-2
               ${activeSection === 'about' 
                 ? 'bg-purple-100 text-purple-600 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]' 
                 : 'text-gray-600 border-gray-300 hover:border-black hover:shadow-[2px_2px_0px_0px_rgba(139,92,246,0.5)]'}`}
-              onClick={() => {setActiveSection('about'); setMobileMenuOpen(false);}}>
+              aria-current={activeSection === 'about' ? 'page' : undefined}
+              onClick={() => scrollToSection('about')}
+            >
               ABOUT
-            </Link>
-            <Link to="/events" 
+            </button>
+            <button
               className={`block px-4 py-3 text-center font-mono font-medium tracking-wider transition-all duration-300 border-2
               ${activeSection === 'events' 
                 ? 'bg-purple-100 text-purple-600 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]' 
                 : 'text-gray-600 border-gray-300 hover:border-black hover:shadow-[2px_2px_0px_0px_rgba(139,92,246,0.5)]'}`}
-              onClick={() => {setActiveSection('events'); setMobileMenuOpen(false);}}>
+              aria-current={activeSection === 'events' ? 'page' : undefined}
+              onClick={() => scrollToSection('events')}
+            >
               EVENTS
-            </Link>
-            <Link to="/#faq" 
+            </button>
+            <button
               className={`block px-4 py-3 text-center font-mono font-medium tracking-wider transition-all duration-300 border-2
               ${activeSection === 'faq' 
                 ? 'bg-purple-100 text-purple-600 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]' 
                 : 'text-gray-600 border-gray-300 hover:border-black hover:shadow-[2px_2px_0px_0px_rgba(139,92,246,0.5)]'}`}
-              onClick={() => {setActiveSection('faq'); setMobileMenuOpen(false);}}>
+              aria-current={activeSection === 'faq' ? 'page' : undefined}
+              onClick={() => scrollToSection('faq')}
+            >
               FAQ
-            </Link>
+            </button>
           </div>
           <div className="p-4 border-t border-gray-300">
             <a href="https://discord.gg/UwmUS9xKsF" target="_blank" rel="noopener noreferrer" 
