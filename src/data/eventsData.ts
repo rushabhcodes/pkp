@@ -97,7 +97,7 @@ export const events: EventType[] = [
          {
           name: 'ETH India',
           logo: 'https://file.notion.so/f/f/5bc094c8-987c-4274-938f-8a9d3fad1a04/4cf44e1b-7c65-42d7-81e8-dcd506fc2842/Untitled.png?table=block&id=f0624a9f-0c26-457b-bfc4-7a9bc1716670&spaceId=5bc094c8-987c-4274-938f-8a9d3fad1a04&expirationTimestamp=1756231200000&signature=KCVZokUKllCgl6cEUv3VSojp4Pa32g0dyovAaXBu6SU&downloadName=Untitled.png',
-          alt: 'ETH INDIA LOGO',
+          alt: 'ETHINDIA LOGO',
           website: 'https://ethindia.co'
         }
       ],
@@ -169,7 +169,7 @@ export const events: EventType[] = [
         {
           name: 'ETH India',
           logo: 'https://file.notion.so/f/f/5bc094c8-987c-4274-938f-8a9d3fad1a04/4cf44e1b-7c65-42d7-81e8-dcd506fc2842/Untitled.png?table=block&id=f0624a9f-0c26-457b-bfc4-7a9bc1716670&spaceId=5bc094c8-987c-4274-938f-8a9d3fad1a04&expirationTimestamp=1756231200000&signature=KCVZokUKllCgl6cEUv3VSojp4Pa32g0dyovAaXBu6SU&downloadName=Untitled.png',
-          alt: 'ETH INDIA LOGO',
+          alt: 'ETHINDIA LOGO',
           website: 'https://ethindia.co'
         }
       ],
