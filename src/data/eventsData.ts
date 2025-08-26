@@ -43,7 +43,7 @@ export const events: EventType[] = [
     image:
       'https://images.unsplash.com/photo-1587474260584-136574528ed5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
     category: 'Hackathon',
-    featured: true,
+    featured: false,
     registrationLink: 'https://devfolio.co/pkp-delhi-2025',
     registrationPlatform: 'Devfolio',
     details: {
@@ -115,7 +115,7 @@ export const events: EventType[] = [
     image:
       'https://images.unsplash.com/photo-1477587458883-47145ed94245?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0',
     category: 'Hackathon',
-    featured: true,
+    featured: false,
     registrationLink: 'https://devfolio.co/pkp-jaipur-2025',
     registrationPlatform: 'Devfolio',
     details: {
