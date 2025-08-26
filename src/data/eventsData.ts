@@ -188,7 +188,7 @@ export const events: EventType[] = [
       'https://images.unsplash.com/photo-1529655683826-aba9b3e77383?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
     category: 'Hackathon',
     featured: true,
-    registrationLink: 'https://unstop.com/hackathon/pkp-mumbai-hackathon-2025',
+    registrationLink: ' https://unstop.com/hackathons/pkp-mumbai-hackathon-2025-programmers-ka-parivar-1547177',
     registrationPlatform: 'Unstop',
     details: {
       organizer: 'PKP Mumbai Chapter',
