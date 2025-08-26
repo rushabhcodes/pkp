@@ -180,14 +180,33 @@ export default function EventDetailPage() {
               </div>
               
               {event.details?.sponsors && event.details.sponsors.length > 0 && (
-                <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
-                  <h2 className="text-xl font-semibold text-gray-900 mb-4">Sponsors</h2>
-                  <div className="space-y-3">
-                    {event.details.sponsors.map((sponsor, index) => (
-                      <div key={index} className="bg-white p-3 rounded border border-gray-200 text-center">
-                        {sponsor}
-                      </div>
-                    ))}
+                <div className="border border-gray-200 rounded-xl p-4 bg-white/70">
+                  <h2 className="text-sm font-semibold text-gray-700 mb-3 tracking-wide uppercase flex items-center gap-2">
+                    <svg className="w-4 h-4 text-indigo-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 3l3.09 6.26L22 10.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 15.14l-5-4.87 6-1.01L12 3z" /></svg>
+                    Sponsors
+                  </h2>
+                  <div className="grid gap-4 sm:gap-6 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 items-center">
+                    {event.details.sponsors.map((s, index) => {
+                      const sponsor = typeof s === 'string' ? { name: s, logo: '', alt: s + ' logo' } : s;
+                      if (!sponsor.logo) return null; // skip if no logo since names hidden
+                      return (
+                        <a
+                          key={index}
+                          href={sponsor.website || '#'}
+                          target={sponsor.website ? '_blank' : undefined}
+                          rel={sponsor.website ? 'noopener noreferrer' : undefined}
+                          className="flex items-center justify-center group"
+                          aria-label={`Sponsor: ${sponsor.name}`}
+                        >
+                          <img
+                            src={sponsor.logo}
+                            alt={sponsor.alt || sponsor.name + ' logo'}
+                            className="h-20 md:h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-105 drop-shadow-sm"
+                            loading="lazy"
+                          />
+                        </a>
+                      );
+                    })}
                   </div>
                 </div>
               )}

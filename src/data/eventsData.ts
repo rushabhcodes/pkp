@@ -18,7 +18,15 @@ export interface EventType {
       time: string;
       activity: string;
     }[];
-    sponsors?: string[];
+    sponsors?: (
+      | string
+      | {
+          name: string;
+          logo: string;
+          alt: string;
+          website?: string;
+        }
+    )[];
     applicationDeadline?: string;
   };
 }
@@ -79,7 +87,20 @@ export const events: EventType[] = [
           activity: 'Results Announcement',
         },
       ],
-      sponsors: ['Devfolio'],
+      sponsors: [
+        {
+          name: 'Devfolio',
+          logo: 'https://file.notion.so/f/f/5bc094c8-987c-4274-938f-8a9d3fad1a04/cc5173fd-2a6a-434e-9d48-1883d77bfc9f/_Colored.png?table=block&id=d55db242-49ff-4e05-8fae-865dc9b77873&spaceId=5bc094c8-987c-4274-938f-8a9d3fad1a04&expirationTimestamp=1756231200000&signature=J4tZu2fDWCEmV3HLboy__ldlrGD9xIpyBTTcLRafIhQ&downloadName=_Colored.png',
+          alt: 'DEVFOLIO LOGO',
+          website: 'https://devfolio.co'
+        },
+         {
+          name: 'ETH India',
+          logo: 'https://file.notion.so/f/f/5bc094c8-987c-4274-938f-8a9d3fad1a04/4cf44e1b-7c65-42d7-81e8-dcd506fc2842/Untitled.png?table=block&id=f0624a9f-0c26-457b-bfc4-7a9bc1716670&spaceId=5bc094c8-987c-4274-938f-8a9d3fad1a04&expirationTimestamp=1756231200000&signature=KCVZokUKllCgl6cEUv3VSojp4Pa32g0dyovAaXBu6SU&downloadName=Untitled.png',
+          alt: 'ETH INDIA LOGO',
+          website: 'https://ethindia.co'
+        }
+      ],
       applicationDeadline: 'October 5, 2025',
     },
   },
@@ -138,7 +159,20 @@ export const events: EventType[] = [
           activity: 'Results Announcement',
         },
       ],
-      sponsors: ['Devfolio'],
+      sponsors: [
+        {
+          name: 'Devfolio',
+          logo: 'https://file.notion.so/f/f/5bc094c8-987c-4274-938f-8a9d3fad1a04/cc5173fd-2a6a-434e-9d48-1883d77bfc9f/_Colored.png?table=block&id=d55db242-49ff-4e05-8fae-865dc9b77873&spaceId=5bc094c8-987c-4274-938f-8a9d3fad1a04&expirationTimestamp=1756231200000&signature=J4tZu2fDWCEmV3HLboy__ldlrGD9xIpyBTTcLRafIhQ&downloadName=_Colored.png',
+          alt: 'DEVFOLIO LOGO',
+          website: 'https://devfolio.co'
+        },
+        {
+          name: 'ETH India',
+          logo: 'https://file.notion.so/f/f/5bc094c8-987c-4274-938f-8a9d3fad1a04/4cf44e1b-7c65-42d7-81e8-dcd506fc2842/Untitled.png?table=block&id=f0624a9f-0c26-457b-bfc4-7a9bc1716670&spaceId=5bc094c8-987c-4274-938f-8a9d3fad1a04&expirationTimestamp=1756231200000&signature=KCVZokUKllCgl6cEUv3VSojp4Pa32g0dyovAaXBu6SU&downloadName=Untitled.png',
+          alt: 'ETH INDIA LOGO',
+          website: 'https://ethindia.co'
+        }
+      ],
       applicationDeadline: 'October 12, 2025',
     },
   },
@@ -197,7 +231,25 @@ export const events: EventType[] = [
           activity: 'Results Announcement',
         },
       ],
-      sponsors: ['Devfolio', 'Appwrite', 'Devtonius'],
+      sponsors: [
+        {
+          name: 'Devfolio',
+          logo: 'https://file.notion.so/f/f/5bc094c8-987c-4274-938f-8a9d3fad1a04/cc5173fd-2a6a-434e-9d48-1883d77bfc9f/_Colored.png?table=block&id=d55db242-49ff-4e05-8fae-865dc9b77873&spaceId=5bc094c8-987c-4274-938f-8a9d3fad1a04&expirationTimestamp=1756231200000&signature=J4tZu2fDWCEmV3HLboy__ldlrGD9xIpyBTTcLRafIhQ&downloadName=_Colored.png',
+          alt: 'DEVFOLIO LOGO',
+          website: 'https://devfolio.co'
+        },
+        {
+          name: 'Appwrite',
+          logo: 'https://appwrite.io/images-ee/press/logo-hero.svg',
+          alt: 'APPWRITE LOGO',
+          website: 'https://appwrite.io'
+        },
+        {
+          name: 'Devtonius',
+          logo: '',
+          alt: 'DEVTONIUS LOGO'
+        }
+      ],
       applicationDeadline: 'December 1, 2025',
     },
   },
