@@ -76,7 +76,14 @@ export default function EventDetailPage() {
                 </div>
               </div>
               <div className="flex gap-4">
-                {event.registrationLink && (
+                {event.registrationPlatform === 'Devfolio' ? (
+                  <div
+                    className="apply-button"
+                    data-hackathon-slug={event.slug}
+                    data-button-theme="light"
+                    style={{ height: 44, width: 312 }}
+                  />
+                ) : event.registrationLink ? (
                   <Button
                     onClick={() => {
                       window.open(event.registrationLink, '_blank');
@@ -84,7 +91,7 @@ export default function EventDetailPage() {
                   >
                     Register on {event.registrationPlatform || 'Platform'}
                   </Button>
-                )}
+                ) : null}
               </div>
             </div>
           </div>
@@ -186,7 +193,14 @@ export default function EventDetailPage() {
               )}
               
               <div className="mt-8 text-center">
-                {event.registrationLink && (
+                {event.registrationPlatform === 'Devfolio' ? (
+                  <div
+                    className="apply-button mx-auto"
+                    data-hackathon-slug={event.slug}
+                    data-button-theme="light"
+                    style={{ height: 44, width: 312 }}
+                  />
+                ) : event.registrationLink ? (
                   <Button
                     size="lg"
                     onClick={() => {
@@ -195,7 +209,7 @@ export default function EventDetailPage() {
                   >
                     Register on {event.registrationPlatform || 'Platform'}
                   </Button>
-                )}
+                ) : null}
                 <p className="text-sm text-gray-500 mt-2">{event.details?.applicationDeadline ? `Registration closes on ${event.details.applicationDeadline}` : ''}</p>
               </div>
             </div>

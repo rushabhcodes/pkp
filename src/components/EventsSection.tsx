@@ -138,9 +138,17 @@ export default function EventsSection() {
                   >
                     View Details
                   </Button>
-                  {event.registrationLink ? (
-                    <Button 
-                      variant="neutral" 
+                  {/* Devfolio integration: show Apply button div for Devfolio platform */}
+                  {event.registrationPlatform === 'Devfolio' ? (
+                    <div
+                      className="apply-button"
+                      data-hackathon-slug={event.slug}
+                      data-button-theme="light"
+                      style={{ height: 44, width: 312 }}
+                    />
+                  ) : event.registrationLink ? (
+                    <Button
+                      variant="neutral"
                       onClick={(e) => {
                         e.preventDefault();
                         window.open(event.registrationLink, '_blank');
@@ -148,17 +156,7 @@ export default function EventsSection() {
                     >
                       Register on {event.registrationPlatform || 'Platform'}
                     </Button>
-                  ) : (
-                    <Button 
-                      variant="neutral" 
-                      onClick={(e) => {
-                        e.preventDefault();
-                        window.open(`https://devfolio.co/${event.slug}`, '_blank');
-                      }}
-                    >
-                      Register on Devfolio
-                    </Button>
-                  )}
+                  ) : null}
                 </CardFooter>
               </Card>
             </div>
