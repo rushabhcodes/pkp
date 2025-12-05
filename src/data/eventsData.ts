@@ -193,7 +193,7 @@ export const events: EventType[] = [
     details: {
       organizer: 'PKP Mumbai Chapter',
       prizes:
-        '₹30,000 in cash prizes, internship opportunities, and exclusive swag kits',
+        '₹10,000 in cash prizes, internship opportunities, and exclusive swag kits',
       schedule: [
         {
           date: 'August 26, 2025',
